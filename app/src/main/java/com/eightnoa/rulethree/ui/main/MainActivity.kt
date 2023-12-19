@@ -19,13 +19,31 @@ package com.eightnoa.rulethree.ui.main
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.MoreHoriz
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.eightnoa.rulethree.R
 import com.eightnoa.rulethree.ui.theme.RuleThreeTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -40,7 +58,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    Header()
                 }
             }
         }
@@ -48,17 +66,42 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun Header() {
+    Column(Modifier.fillMaxWidth()) {
+        Row {
+            Spacer(modifier = Modifier.weight(1f))
+            Options()
+            Spacer(modifier = Modifier.width(8.dp))
+        }
+        Row(Modifier.align(Alignment.CenterHorizontally)) {
+            Title()
+        }
+    }
+}
+
+@Composable
+fun Title() {
     Text(
-        text = "Hello $name!",
-        modifier = modifier
+        text = stringResource(R.string.title), fontSize = 48.sp, fontFamily = FontFamily(
+            Font(R.font.creteround_regular, FontWeight.Bold)
+        )
     )
 }
+
+@Composable
+fun Options() {
+    IconButton(onClick = {
+
+    }) {
+        Icon(imageVector = Icons.Rounded.MoreHoriz, contentDescription = "More options", Modifier.size(64.dp))
+    }
+}
+
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     RuleThreeTheme {
-        Greeting("Android")
+        Header()
     }
 }

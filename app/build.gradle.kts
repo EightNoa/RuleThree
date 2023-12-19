@@ -61,6 +61,7 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
+    implementation("androidx.appcompat:appcompat:1.6.1")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     testImplementation("io.mockk:mockk:1.12.2")
@@ -70,8 +71,11 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
+    //Icons
+    implementation("androidx.compose.material:material-icons-extended:1.5.4")
+
     //Dagger Hilt
-    implementation("com.google.dagger:hilt-android:2.48.1")
+    implementation("com.google.dagger:hilt-android:2.49")
     ksp("androidx.room:room-compiler:2.6.1")
     ksp("com.google.dagger:hilt-compiler:2.49")
 
