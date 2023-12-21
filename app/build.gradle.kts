@@ -51,32 +51,47 @@ android {
     }
 }
 
+
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
-    implementation("androidx.activity:activity-compose:1.8.2")
+    //Core
+    implementation(libs.core.ktx)
+    implementation(libs.lifecycle.runtime.ktx)
+    //Compose
+    implementation(libs.activity.compose)
     implementation(platform("androidx.compose:compose-bom:2023.08.00"))
+    //noinspection UseTomlInstead
     implementation("androidx.compose.ui:ui")
+    //noinspection UseTomlInstead
     implementation("androidx.compose.ui:ui-graphics")
+    //noinspection UseTomlInstead
     implementation("androidx.compose.ui:ui-tooling-preview")
+    //noinspection UseTomlInstead
     implementation("androidx.compose.material3:material3")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    testImplementation("io.mockk:mockk:1.12.2")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation(libs.appcompat)
+    //Icons
+    implementation(libs.material.icons.extended)
+    //Dagger Hilt
+    implementation(libs.hilt.core)
+
+    testImplementation(libs.junit)
+    testImplementation(libs.mockk)
+
+    androidTestImplementation(libs.ext.junit)
+    androidTestImplementation(libs.espresso.core)
+    //Compose
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.08.00"))
+    //noinspection UseTomlInstead
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
+
+
+    //noinspection UseTomlInstead
     debugImplementation("androidx.compose.ui:ui-tooling")
+    //noinspection UseTomlInstead
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
-    //Icons
-    implementation("androidx.compose.material:material-icons-extended:1.5.4")
 
-    //Dagger Hilt
-    implementation("com.google.dagger:hilt-android:2.49")
-    ksp("androidx.room:room-compiler:2.6.1")
-    ksp("com.google.dagger:hilt-compiler:2.49")
+    ksp(libs.room.compiler)
+    ksp(libs.hilt.compile)
 
 }
