@@ -84,7 +84,7 @@ fun Title() {
     Text(
         text = stringResource(R.string.title), fontSize = 48.sp, fontFamily = FontFamily(
             Font(R.font.creteround_regular, FontWeight.Bold)
-        )
+        ), color = MaterialTheme.colorScheme.secondary
     )
 }
 
