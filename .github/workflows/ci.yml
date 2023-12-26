@@ -34,8 +34,8 @@ jobs:
         run: ./gradlew assemble
         
   lint:
-    name: Perform lint check
     runs-on: ubuntu-latest
+    name: Perform lint check
     steps:
       - uses: actions/checkout@v3
       - name: set up JDK 17
@@ -45,9 +45,8 @@ jobs:
           distribution: 'temurin'
           cache: gradle
         
-      - name: Checkout the code
-        uses: actions/checkout@v3
-
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
       - name: Run lint
         uses: ./gradlew lintDebug
 
