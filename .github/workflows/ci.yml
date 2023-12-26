@@ -48,7 +48,7 @@ jobs:
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
       - name: Run lint
-        uses: ./gradlew lintDebug
+        run: ./gradlew lintDebug
 
       - name: Upload html test report
         uses: actions/upload-artifact@v4
