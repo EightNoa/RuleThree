@@ -15,6 +15,24 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  build:
+    runs-on: ubuntu-latest
+
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+          cache: gradle
+
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+      - name: Build app
+        run: ./gradlew assemble
+        
   lint:
     name: Perform lint check
     runs-on: ubuntu-latest
@@ -39,7 +57,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Run tests
-        uses: ./gradlew test
+        uses: ./gradlew testDebugUnitTest
 
       - name: Upload test report
         uses: actions/upload-artifact@v4
