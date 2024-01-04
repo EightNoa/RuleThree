@@ -24,6 +24,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
@@ -96,15 +97,15 @@ fun CalculationOptions() {
     Row(
         Modifier
             .fillMaxWidth()
-            .padding(start = 64.dp, end = 64.dp, top = 16.dp)
+            .padding(start = 48.dp, end = 48.dp, top = 16.dp)
     ) {
-        Button(onClick = { }, modifier = Modifier.weight(1F)) {
+        Button(onClick = { }, modifier = Modifier.width(128.dp)) {
             Text(text = stringResource(R.string.clean_btn))
             
         }
-        Spacer(modifier = Modifier.weight(0.5F))
-        Button(onClick = { }, modifier = Modifier.weight(1F)) {
-            Text(text = stringResource(R.string.calculate_btn))
+        Spacer(modifier = Modifier.weight(1F))
+        Button(onClick = { }, modifier = Modifier.width(128.dp)) {
+            Text(text = stringResource(R.string.calculate_btn), maxLines = 1)
         }
     }
 }
