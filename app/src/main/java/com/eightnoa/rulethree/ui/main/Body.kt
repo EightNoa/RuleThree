@@ -25,6 +25,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -32,15 +33,17 @@ import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.eightnoa.rulethree.R
 
 @Composable
 fun Body() {
     Column(Modifier.fillMaxWidth()) {
         CalculationArea()
-
+        CalculationOptions()
     }
 }
 
@@ -49,29 +52,59 @@ fun CalculationArea() {
     Column(
         Modifier
             .fillMaxWidth()
-            .padding(16.dp)) {
-        Card(shape = RoundedCornerShape(8.dp), border = BorderStroke(4.dp, MaterialTheme.colorScheme.secondary)) {
+            .padding(16.dp)
+    ) {
+        Card(
+            shape = RoundedCornerShape(8.dp),
+            border = BorderStroke(4.dp, MaterialTheme.colorScheme.secondary)
+        ) {
             Column(
                 Modifier
                     .fillMaxWidth()
                     .background(MaterialTheme.colorScheme.background)
-                    .padding(start =  32.dp, end =  32.dp)
+                    .padding(start = 32.dp, end = 32.dp)
                     .height(256.dp)
             ) {
                 Spacer(modifier = Modifier.weight(1F))
-               Row {
-                   TextField(value = "", onValueChange = {}, Modifier.weight(1F))
-                   Spacer(modifier = Modifier.weight(0.4F))
-                   TextField(value = "", onValueChange = {}, Modifier.weight(1F))
-               }
+                Row {
+                    TextField(value = "", onValueChange = {}, Modifier.weight(1F))
+                    Spacer(modifier = Modifier.weight(0.4F))
+                    TextField(value = "", onValueChange = {}, Modifier.weight(1F))
+                }
                 Spacer(modifier = Modifier.weight(0.8F))
                 Row {
                     TextField(value = "", onValueChange = {}, Modifier.weight(1F))
                     Spacer(modifier = Modifier.weight(0.9F))
-                    Text(text = "X", Modifier.weight(0.6F).align(Alignment.CenterVertically), fontSize = 32.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.secondary)
+                    Text(
+                        text = "X",
+                        Modifier
+                            .weight(0.6F)
+                            .align(Alignment.CenterVertically),
+                        fontSize = 32.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.secondary
+                    )
                 }
                 Spacer(modifier = Modifier.weight(1F))
-                }
             }
         }
+    }
+}
+
+@Composable
+fun CalculationOptions() {
+    Row(
+        Modifier
+            .fillMaxWidth()
+            .padding(start = 64.dp, end = 64.dp, top = 16.dp)
+    ) {
+        Button(onClick = { }, modifier = Modifier.weight(1F)) {
+            Text(text = stringResource(R.string.clean_btn))
+            
+        }
+        Spacer(modifier = Modifier.weight(0.5F))
+        Button(onClick = { }, modifier = Modifier.weight(1F)) {
+            Text(text = stringResource(R.string.calculate_btn))
+        }
+    }
 }
