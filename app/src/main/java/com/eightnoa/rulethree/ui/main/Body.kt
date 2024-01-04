@@ -24,15 +24,17 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun Body() {
@@ -59,14 +61,14 @@ fun CalculationArea() {
                 Spacer(modifier = Modifier.weight(1F))
                Row {
                    TextField(value = "", onValueChange = {}, Modifier.weight(1F))
-                   Spacer(modifier = Modifier.width(32.dp).weight(0.4F))
+                   Spacer(modifier = Modifier.weight(0.4F))
                    TextField(value = "", onValueChange = {}, Modifier.weight(1F))
                }
                 Spacer(modifier = Modifier.weight(0.8F))
                 Row {
                     TextField(value = "", onValueChange = {}, Modifier.weight(1F))
-                    Spacer(modifier = Modifier.width(32.dp).weight(0.4F))
-                    Text(text = "X", Modifier.weight(1F))
+                    Spacer(modifier = Modifier.weight(0.9F))
+                    Text(text = "X", Modifier.weight(0.6F).align(Alignment.CenterVertically), fontSize = 32.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.secondary)
                 }
                 Spacer(modifier = Modifier.weight(1F))
                 }
