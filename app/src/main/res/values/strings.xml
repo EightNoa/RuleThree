@@ -3,4 +3,6 @@
     <string name="title">Rule of three</string>
     <string name="calculate_btn">Calculate</string>
     <string name="clean_btn">Clean</string>
+    <string name="result_title">Result</string>
+    <string name="save_btn">Save</string>
 </resources>

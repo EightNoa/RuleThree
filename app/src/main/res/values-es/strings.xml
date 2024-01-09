@@ -4,4 +4,6 @@
     <string name="title">Regla de tres</string>
     <string name="calculate_btn">Calcular</string>
     <string name="clean_btn">Limpiar</string>
+    <string name="result_title">Resultado</string>
+    <string name="save_btn">Guardar</string>
 </resources>

@@ -45,6 +45,9 @@ fun Body() {
     Column(Modifier.fillMaxWidth()) {
         CalculationArea()
         CalculationOptions()
+        Row(Modifier.align(Alignment.CenterHorizontally)) {
+            ResultArea("XXX")
+        }
     }
 }
 
@@ -101,11 +104,28 @@ fun CalculationOptions() {
     ) {
         Button(onClick = { }, modifier = Modifier.width(128.dp)) {
             Text(text = stringResource(R.string.clean_btn))
-            
+
         }
         Spacer(modifier = Modifier.weight(1F))
         Button(onClick = { }, modifier = Modifier.width(128.dp)) {
             Text(text = stringResource(R.string.calculate_btn), maxLines = 1)
+        }
+    }
+}
+
+@Composable
+fun ResultArea(result: String) {
+    Column(Modifier.padding(top = 16.dp)) {
+        Row(Modifier.align(Alignment.CenterHorizontally)) {
+            Title(stringResource(R.string.result_title))
+        }
+        Row(Modifier.align(Alignment.CenterHorizontally)) {
+            Title(result)
+        }
+        Row(Modifier.align(Alignment.CenterHorizontally).padding(top = 16.dp)) {
+            Button(onClick = { }, modifier = Modifier.width(128.dp)) {
+                Text(text = stringResource(id = R.string.save_btn), maxLines = 1)
+            }
         }
     }
 }
