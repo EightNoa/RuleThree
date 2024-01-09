@@ -19,6 +19,7 @@ package com.eightnoa.rulethree.ui.main
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -41,8 +42,8 @@ import androidx.compose.ui.unit.sp
 import com.eightnoa.rulethree.R
 
 @Composable
-fun Body() {
-    Column(Modifier.fillMaxWidth()) {
+fun Body(padding: PaddingValues) {
+    Column(Modifier.fillMaxWidth().padding(padding)) {
         CalculationArea()
         CalculationOptions()
         Row(Modifier.align(Alignment.CenterHorizontally)) {

@@ -6,4 +6,5 @@
     <string name="clean_btn">Limpiar</string>
     <string name="result_title">Resultado</string>
     <string name="save_btn">Guardar</string>
+    <string name="history_btn">Historial</string>
 </resources>
